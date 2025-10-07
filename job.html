@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Add new member </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card-wrap">
+     <form id="jobForm" class="card" autocomplete="off" novalidate>
+        <h2 class="card-title">Add new member</h2>
+
+        <div class="field">
+          <label class="label" for="jobTitle">Job title</label>
+          <input id="jobTitle" name="jobTitle" type="text" required />
+          <div class="hint" data-for="jobTitle"></div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="role">Role</label>
+          <input id="role" name="role" type="text" required />
+          <div class="hint" data-for="role"></div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="branch">Branch</label>
+          <input id="branch" name="branch" type="text" required />
+          <div class="hint" data-for="branch"></div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="password">Password</label>
+          <input id="password" name="password" type="password" required />
+          <div class="hint" data-for="password"></div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="confirmPassword">Confirm Password</label>
+          <input id="confirmPassword" name="confirmPassword" type="password" required />
+          <div class="hint" data-for="confirmPassword"></div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn" onclick="window.location.href='eduform.html'">Back</button>
+          <button id="finishBtn" class="btn" type="submit">
+            <span class="btn-text">Finish</span>
+            <span class="btn-check">✓</span>
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+   <script src="edu.js"></script>
+  </body>
+</html>

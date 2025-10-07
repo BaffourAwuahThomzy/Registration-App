@@ -1,0 +1,259 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --accent: #1d3b8b;
+  --soft: #eef1f6;
+  --muted: #7b7f87;
+  --error: #c0392b;
+  --radius: 16px;
+  --shadow: 0 12px 30px rgba(17,24,39,0.08);
+  --transition: 220ms cubic-bezier(.2,.9,.22,1);
+  font-synthesis: none;
+}
+
+/* Reset */
+* { box-sizing: border-box }
+html, body { height: 100% }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: var(--bg);
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+/* Layout */
+.page { width: 100%; max-width: 520px }
+.card-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  animation: pageFade .5s ease both;
+}
+
+.card {
+  width: 100%;
+  background: var(--card);
+  border-radius: 22px;
+  padding: 28px 26px;
+  box-shadow: var(--shadow);
+  transform-origin: top center;
+  opacity: 0;
+  transform: translateY(18px) scale(.995);
+  animation: cardIn .48s var(--transition) both;
+}
+
+/* Title */
+.card-title {
+  text-align: center;
+  margin: 0 0 18px 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  color: var(--accent);
+}
+
+/* Fields */
+.field {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Inputs */
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #eef2f6;
+  background: linear-gradient(180deg, #fff, #fbfdff);
+  font-size: 14px;
+  transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition);
+  outline: none;
+}
+
+.field input:focus {
+  box-shadow: 0 10px 24px rgba(29,59,139,0.08);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Hints / errors */
+.hint {
+  margin-top: 7px;
+  font-size: 12px;
+  color: var(--error);
+  min-height: 16px;
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+.hint.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+/* Button base */
+.btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  min-width: 96px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.btn:focus { outline: none }
+
+/* Hover and press */
+.btn:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 16px 36px rgba(29,59,139,0.12);
+}
+.btn:active { transform: translateY(0) }
+
+/* Text and check */
+.btn-text { display: inline-block; transition: opacity 200ms ease }
+.btn-check {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  font-weight: 700;
+  font-size: 16px;
+  opacity: 0;
+  transition: transform 260ms cubic-bezier(.2,.9,.22,1), opacity 160ms ease;
+}
+
+/* Success state */
+.btn.success {
+  background: #0a8f4a;
+  pointer-events: none;
+}
+.btn.success .btn-text { opacity: 0 }
+.btn.success .btn-check { transform: translateY(-50%) scale(1); opacity: 1 }
+
+/* Ripple effect */
+.btn::after {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: rgba(255,255,255,0.12);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  border-radius: 50%;
+  transition: transform 520ms cubic-bezier(.2,.9,.22,1), opacity 320ms ease;
+  opacity: 0;
+}
+.btn.ripple::after { transform: translate(-50%,-50%) scale(1); opacity: 1 }
+
+/* Animations */
+@keyframes cardIn {
+  to { opacity: 1; transform: translateY(0) scale(1) }
+}
+@keyframes pageFade {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+/* Small screens */
+@media (max-width: 420px) {
+  .card { padding: 20px; border-radius: 18px }
+  .card-title { font-size: 16px }
+  .btn { min-width: 78px; padding: 10px 14px }
+}
+
+body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 40px;
+      color: #1e293b;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      color: #0f172a;
+      margin-bottom: 30px;
+    }
+
+    .profile-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px 40px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    h3 {
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-top: 25px;
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: #0f172a;
+    }
+
+    p {
+      margin: 6px 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    b {
+      color: #334155;
+    }
+
+    .profile-image {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .profile-image img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #3b82f6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .no-img {
+      background: #e2e8f0;
+      color: #64748b;
+      font-size: 14px;
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+    }

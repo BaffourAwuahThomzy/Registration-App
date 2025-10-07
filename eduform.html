@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Add new member - Step 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="edu.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card-wrap">
+      <form id="eduForm" class="card" autocomplete="off" novalidate>
+        <h2 class="card-title">Add new member</h2>
+
+        <div class="field">
+          <label class="label" for="qualification">Qualification</label>
+          <input id="qualification" name="qualification" type="text" required />
+          <div class="hint" data-for="qualification"></div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="fieldStudy">Field of Study</label>
+          <input id="fieldStudy" name="fieldStudy" type="text" required />
+          <div class="hint" data-for="fieldStudy"></div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="institution">Institution</label>
+          <input id="institution" name="institution" type="text" required />
+          <div class="hint" data-for="institution"></div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="idNo">Valid ID No.</label>
+          <input id="idNo" name="idNo" type="text" required />
+          <div class="hint" data-for="idNo"></div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn" onclick="window.location.href='index.html'">Back</button>
+          <button id="nextBtn" class="btn" type="submit">
+            <span class="btn-text" onclick="window.location.href='job.html'">Next</span>
+            <span class="btn-check">✓</span>
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script src="edu.js"></script>
+  </body>
+</html>

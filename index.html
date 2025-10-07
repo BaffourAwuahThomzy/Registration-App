@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Add new member</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card-wrap">
+      <form id="memberForm" class="card" autocomplete="off" novalidate>
+        <h2 class="card-title">Add new member</h2>
+
+        <div class="field">
+          <label class="label" for="fullName">Full name</label>
+          <input id="fullName" name="fullName" type="text" required />
+          <div class="hint" data-for="fullName"></div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="dob">Date of Birth</label>
+          <input id="dob" name="dob" type="date" required />
+          <div class="hint" data-for="dob"></div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+          <div class="hint" data-for="email"></div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="phone">Phone number</label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" pattern="[0-9+()\\-\\s]{6,}" required />
+          <div class="hint" data-for="phone"></div>
+        </div>
+
+        <div class="actions">
+          <button id="nextBtn" class="btn" type="submit">
+            <span class="btn-text">Next</span>
+            <span class="btn-check" aria-hidden="true">✓</span>
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
